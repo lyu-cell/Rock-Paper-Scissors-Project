@@ -21,31 +21,37 @@ function playRound(playerselection, computerSelection) {
     if (playerselection === "rock" && computerSelection === "scissor" ||
         playerselection === "paper" && computerSelection === "rock" ||
         playerselection === "scissor" && computerSelection === "paper") {
-        return `You won! ${playerselection} beats ${computerSelection}`;
-        
+        return `You won! ${playerselection} beats ${computerSelection}`;    
     } else if (playerselection === "rock" && computerSelection === "rock" ||
                playerselection === "paper" && computerSelection === "paper" ||
                playerselection === "scissor" && computerSelection === "scissor") {
         return `it's a draw! ${playerselection} and ${computerSelection} are the same!`;
-    } else {
+    } else {                                            
         return `You Lost! ${computerSelection} beats ${playerselection}`;
     }
 }
 
 console.log(playRound(playerselection, computerSelection))
 
+function game() {
+    console.log(playerselection = prompt("Rock, Paper, Scissor").toLowerCase());
+    console.log(computerSelection = getComputerchoice());
+    console.log(playRound(playerselection, computerSelection));
 
-/*desire: to play the game five rounds and record the number
+    console.log(playerselection = prompt("Rock, Paper, Scissor").toLowerCase());
+    console.log(computerSelection = getComputerchoice());
+    console.log(playRound(playerselection, computerSelection));
 
-algorithm: 
+    console.log(playerselection = prompt("Rock, Paper, Scissor").toLowerCase());
+    console.log(computerSelection = getComputerchoice());
+    console.log(playRound(playerselection, computerSelection));
 
-1. The number generation function have to run multiple times without refreshing
-   the page. (completed)
+    console.log(playerselection = prompt("Rock, Paper, Scissor").toLowerCase());
+    console.log(computerSelection = getComputerchoice());
+    console.log(playRound(playerselection, computerSelection));
+}
 
-2. round two start after completion of round one so on.
 
-3. on each round player or computer will recive point.
+console.log(game())
 
-4. whoever reaches the 3 point mark first wins the game and that the 
-   condition of the end of the game.
-*/
+
