@@ -59,19 +59,17 @@ function game() {
     round()
     round()
     round()
-    if (player === 5 || player === 4 && computer === 1 || player === 4 && computer === 2 ||
-        player === 4 && computer === 3 || player === 3 && computer === 1 || player === 3 && computer === 2 || 
-        player === 2 && computer === 1 || player === 4 && draw === 1 || player === 4 && draw === 2 ||
-        player === 4 && draw === 3 || player === 3 && draw === 1 || player === 3 && draw === 2 || 
-        player === 2 && draw === 1) {
+    if (player === 5 || player === 4 && computer === 1 || player === 3 && computer === 2 ||
+        player === 2 && computer === 1 && draw === 2 || player === 3 && computer === 1 && draw === 1 ||
+        player === 1 && draw === 4 || player === 2 && draw === 3 || player === 3 && draw === 2 || 
+        player === 4 && draw === 1) {
             console.log("Congratulation! You've Won!")
     } 
     
-    else if (computer === 5 || computer === 4 && player === 1 || computer === 4 && player === 2 ||
-             computer === 4 && player === 3 || computer === 3 && player === 1 || computer === 3 && player === 2 || 
-             computer === 2 && player === 1 || computer === 4 && draw === 1 || computer === 4 && draw === 2 ||
-             computer === 4 && draw === 3 || computer === 3 && draw === 1 || computer === 3 && draw === 2 || 
-             computer === 2 && draw === 1) {
+    else if (computer === 5 || computer === 4 && player === 1 || computer === 3 && player === 2 ||
+             computer === 2 && player === 1 && draw === 2 || computer === 3 && player === 1 && draw === 1 || 
+             computer === 1 && draw === 4 || computer === 2 && draw === 3 || computer === 3 &&  draw === 2 ||
+             computer === 4 && draw === 1) {
                 console.log("Game Over, Better Luck Next Time!")
                } else {
                 console.log("Draw, Try Again!")
@@ -81,4 +79,3 @@ function game() {
 
 
 console.log(game())
-
