@@ -1,0 +1,45 @@
+body > .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 7rem;
+    align-items: center;
+    height: 300px;
+    background-color: antiquewhite;
+}
+
+button {
+    height: 70px;
+    width: 150px;
+}
+
+button.rock {
+    background-color: grey;
+    color: black;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+button.paper {
+    background-color: white;
+    color: black;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+button.scissor {
+    background-color: rgb(218, 213, 213);
+    color: black;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+.result {
+    display: flex;
+    height: 300px;
+    border: 3px solid black;
+    justify-content: center;
+    font-size: 40px;
+    align-items: center;
+    background-color: azure;
+}

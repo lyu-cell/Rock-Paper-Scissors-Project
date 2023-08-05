@@ -2,40 +2,61 @@ function getComputerchoice() {
     let randomNum = Math.floor(Math.random() * 3) + 1;
 
     if (randomNum === 1) {
-        return "rock"
+        return "Rock"
     } else if (randomNum === 2) {
-        return "paper"
+        return "Paper"
     } else {
-       return "scissor"
+       return "Scissor"
     }
 }
 
-let playerselection = prompt("Rock, Paper, Scissor").toLowerCase();
+// let playerselection = prompt("Rock, Paper, Scissor").toLowerCase();
+
 let computerSelection = getComputerchoice();
+let playerselection = "";
 
 
 console.log(playerselection);
 console.log(computerSelection);
 
-let p = 1;
-let c = 1;
-let d = 1;
+// let p = 1;
+// let c = 1;
+// let d = 1;
+// 
+// let player = p;
+// let computer = c; 
+// let draw = d;const 
+const rock = document.querySelector(".rock");
 
-let player = p;
-let computer = c; 
-let draw = d;
+rock.addEventListener("click", () => {
+    playerselection = "Rock";
+    playRound(playerselection, computerSelection)
+});
+
+const paper = document.querySelector(".paper");
+paper.addEventListener("click", () => {
+    playerselection = "Paper";
+    playRound(playerselection, computerSelection)
+});
+
+const scissor = document.querySelector(".scissor");
+scissor.addEventListener("click", () => {
+    playerselection = "Scissor"
+    playRound(playerselection, computerSelection);
+});
+const para = document.querySelector(".para")
 
 function playRound(playerselection, computerSelection) {
-    if (playerselection === "rock" && computerSelection === "scissor" ||
-        playerselection === "paper" && computerSelection === "rock" ||
-        playerselection === "scissor" && computerSelection === "paper") {
-        return `You Won! ${playerselection} Beats ${computerSelection} (Player Score ${player = p++})`;  
-    } else if (playerselection === "rock" && computerSelection === "rock" ||
-               playerselection === "paper" && computerSelection === "paper" ||
-               playerselection === "scissor" && computerSelection === "scissor") {      
-        return `It's a Draw! ${playerselection} and ${computerSelection} are the same! (Draw ${draw = d++})`;
+    if (playerselection === "Rock" && computerSelection === "Scissor" ||
+        playerselection === "Paper" && computerSelection === "Rock" ||
+        playerselection === "Scissor" && computerSelection === "Paper") {
+        return para.textContent = `You Won! ${playerselection} Beats ${computerSelection}!`;  
+    } else if (playerselection === "Rock" && computerSelection === "Rock" ||
+               playerselection === "Paper" && computerSelection === "Paper" ||
+               playerselection === "Scissor" && computerSelection === "Scissor") {      
+        return para.textContent = `It's a Draw! ${playerselection} and ${computerSelection} are the same!`;
     } else {                           
-        return `You Lost! ${computerSelection} Beats ${playerselection} (Computer Score ${computer = c++})`;
+        return para.textContent = `You Lost! ${computerSelection} Beats ${playerselection}!`;
     }
 }
 
@@ -43,10 +64,9 @@ function playRound(playerselection, computerSelection) {
 
 
 
+//console.log(playRound(playerselection, computerSelection))
 
-console.log(playRound(playerselection, computerSelection))
-
-function round() {
+/*function round() {
     console.log(playerselection = prompt("Rock, Paper, Scissor").toLowerCase());
     console.log(computerSelection = getComputerchoice());
     console.log(playRound(playerselection, computerSelection));
@@ -78,4 +98,5 @@ function game() {
 
 
 
-console.log(game())
+console.log(game())*/
+
