@@ -1,0 +1,69 @@
+body > .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 7rem;
+    align-items: center;
+    height: 300px;
+    background-color: antiquewhite;
+}
+
+button {
+    height: 70px;
+    width: 150px;
+}
+
+button.rock {
+    background-color: grey;
+    color: black;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+button.paper {
+    background-color: white;
+    color: black;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+button.scissor {
+    background-color: rgb(218, 213, 213);
+    color: black;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+.result {
+    display: flex;
+    height: 300px;
+    flex-direction: column;
+    border: 3px solid black;
+    justify-content: space-around;
+    font-size: 30px;
+    font-weight: bolder;
+    align-items: center;
+    background-color: azure;
+}
+
+.score {
+    display: flex;
+    gap: 3rem;
+}
+
+.player {
+    width: 180px;
+    height: 90px;
+    text-align: center;
+    background-color: aquamarine;
+    border: 2px solid black;
+    
+}
+
+.computer {
+    width: 180px;
+    height: 90px;
+    text-align: center;
+    background-color: aquamarine;
+    border: 2px solid black;
+}
