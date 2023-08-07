@@ -73,10 +73,6 @@ function playRound(playerselection, computerSelection) {
 }
 
 
-
-
-//console.log(playRound(playerselection, computerSelection))
-
 function round() {
     console.log(playerselection = prompt("Rock, Paper, Scissor").toLowerCase());
     console.log(computerSelection = getComputerchoice());
@@ -94,14 +90,4 @@ function referee() {
     }
 }
 
-//for (;playerScore <= 4;) {
-//    
-//    round()
-//
-//    if (computerScore === 5) {
-//        console.log("Game Over")
-//    } else if (playerScore === 5) {
-//        console.log("Congratulation, You've Won!")
-//    }
-//
-//    if (computerScore === 5) break    
+  
