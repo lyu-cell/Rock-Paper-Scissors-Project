@@ -22,7 +22,7 @@ button {
 }
 
 button:hover {
-    background-color: azure;
+    background-color: rgb(229, 245, 245);
 }
 
 button:active {
