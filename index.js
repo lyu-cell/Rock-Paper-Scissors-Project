@@ -1,3 +1,4 @@
+// function that generates computer rps selections
 function getComputerchoice() {
     let randomNum = Math.floor(Math.random() * 3) + 1;
 
@@ -10,93 +11,97 @@ function getComputerchoice() {
     }
 }
 
-// let playerselection = prompt("Rock, Paper, Scissor").toLowerCase();
 
-let computerSelection = getComputerchoice();
+// variable that contains the computers or players choice between "Rock, Paper or Scissor"
+let computerSelection = "";
 let playerselection = "";
+
+
+// variables that stores the points
+let playerScore = 0;
+let computerScore = 0;
+
+
+// all the querySelectors are here
+const para = document.querySelector(".para");
+const paper = document.querySelector(".paper");
+const scissor = document.querySelector(".scissor");
+const rock = document.querySelector(".rock");
+const player = document.querySelector(".player");
+const computer = document.querySelector(".computer");
+
+
+rock.addEventListener("click", () => {
+    playerselection = "Rock"
+    computerSelection = getComputerchoice();
+    referee()
+})
+
+paper.addEventListener("click", () => {
+    playerselection = "Paper"
+    computerSelection = getComputerchoice();
+    referee()
+})
+
+scissor.addEventListener("click", () => {
+    playerselection = "Scissor"
+    computerSelection = getComputerchoice();
+    referee()
+})
+
 
 
 console.log(playerselection);
 console.log(computerSelection);
 
-// let p = 1;
-// let c = 1;
-// let d = 1;
-// 
-// let player = p;
-// let computer = c; 
-// let draw = d;const 
-const rock = document.querySelector(".rock");
 
-rock.addEventListener("click", () => {
-    playerselection = "Rock";
-    playRound(playerselection, computerSelection)
-});
-
-const paper = document.querySelector(".paper");
-paper.addEventListener("click", () => {
-    playerselection = "Paper";
-    playRound(playerselection, computerSelection)
-});
-
-const scissor = document.querySelector(".scissor");
-scissor.addEventListener("click", () => {
-    playerselection = "Scissor"
-    playRound(playerselection, computerSelection);
-});
-const para = document.querySelector(".para")
 
 function playRound(playerselection, computerSelection) {
     if (playerselection === "Rock" && computerSelection === "Scissor" ||
         playerselection === "Paper" && computerSelection === "Rock" ||
         playerselection === "Scissor" && computerSelection === "Paper") {
-        return para.textContent = `You Won! ${playerselection} Beats ${computerSelection}!`;  
+        return para.textContent = `You Won! ${playerselection} Beat's ${computerSelection}`, 
+               player.textContent = `Player Score: ${playerScore += 1}`
     } else if (playerselection === "Rock" && computerSelection === "Rock" ||
                playerselection === "Paper" && computerSelection === "Paper" ||
                playerselection === "Scissor" && computerSelection === "Scissor") {      
         return para.textContent = `It's a Draw! ${playerselection} and ${computerSelection} are the same!`;
     } else {                           
-        return para.textContent = `You Lost! ${computerSelection} Beats ${playerselection}!`;
+        return para.textContent = `You Lost! Computer's ${computerSelection} Beat's Your ${playerselection}`,
+               computer.textContent = `Computer Score: ${computerScore += 1}`;
     }
 }
 
 
 
 
-
 //console.log(playRound(playerselection, computerSelection))
 
-/*function round() {
+function round() {
     console.log(playerselection = prompt("Rock, Paper, Scissor").toLowerCase());
     console.log(computerSelection = getComputerchoice());
     console.log(playRound(playerselection, computerSelection));
 }
 
+function referee() {
 
-
-function game() {
-    round()
-    round()
-    round()
-    round()
-    if (player === 5 || player === 4 && computer === 1 || player === 3 && computer === 2 ||
-        player === 2 && computer === 1 && draw === 2 || player === 3 && computer === 1 && draw === 1 ||
-        player === 1 && draw === 4 || player === 2 && draw === 3 || player === 3 && draw === 2 || 
-        player === 4 && draw === 1) {
-            console.log("Congratulation! You've Won!")
-    } 
-    
-    else if (computer === 5 || computer === 4 && player === 1 || computer === 3 && player === 2 ||
-             computer === 2 && player === 1 && draw === 2 || computer === 3 && player === 1 && draw === 1 || 
-             computer === 1 && draw === 4 || computer === 2 && draw === 3 || computer === 3 &&  draw === 2 ||
-             computer === 4 && draw === 1) {
-                console.log("Game Over, Better Luck Next Time!")
-               } else {
-                console.log("Draw, Try Again!")
-               }
+    if (playerScore < 5 && computerScore !== 5) {
+        playRound(playerselection, computerSelection)
+    } if (playerScore === 5 && computerScore !== 5) {
+        para.textContent = "Congratulation, You've Won!"
+    } else if (computerScore === 5 && playerScore !== 5) {
+        para.textContent = `Game Over`
+    }
 }
 
-
-
-console.log(game())*/
-
+//for (;playerScore <= 4;) {
+//    
+//    round()
+//
+//    if (computerScore === 5) {
+//        console.log("Game Over")
+//    } else if (playerScore === 5) {
+//        console.log("Congratulation, You've Won!")
+//    }
+//
+//    if (computerScore === 5) break    
